@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("What is your grade in percentage? ");
+        Console.Write("What is your grade in percentage? ");
         string GradeString = Console.ReadLine();
         int Grade = int.Parse(GradeString);
         string letter = "default";
