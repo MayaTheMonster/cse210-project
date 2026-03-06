@@ -62,6 +62,7 @@ class Program
         {
             Sign = "";
         }
+        
         Console.WriteLine($"Your final grade is {letter}{Sign}! {ExtraString}");
     }
 }
