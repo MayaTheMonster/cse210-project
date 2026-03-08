@@ -34,15 +34,11 @@ class Program
         {
             Console.WriteLine($"Brother {name}, the square of your number is {square}");
         }
-
-        static void main()
-        {
-            SayHello();
-            string username = AskName();
-            int favoriteNumber = AskWholeNumber();
-            int squaredFavorite = SquareNumber(favoriteNumber);
-            DisplaySquareName(username,squaredFavorite);
-        }
-        main();
+        
+        SayHello();
+        string username = AskName();
+        int favoriteNumber = AskWholeNumber();
+        int squaredFavorite = SquareNumber(favoriteNumber);
+        DisplaySquareName(username,squaredFavorite);
     }
 }

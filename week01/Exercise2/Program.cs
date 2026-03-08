@@ -6,26 +6,26 @@ class Program
     static void Main(string[] args)
     {
         Console.Write("What is your grade in percentage? ");
-        string GradeString = Console.ReadLine();
-        int Grade = int.Parse(GradeString);
+        string gradeString = Console.ReadLine();
+        int grade = int.Parse(gradeString);
         string letter = "default";
-        string ExtraString = "default";
-        string Sign = "default";
+        string extraString = "default";
+        string sign = "default";
         int remainder = 5;
 
-        if (Grade >= 90)
+        if (grade >= 90)
         {
             letter = "A";
         }
-        else if (Grade >= 80)
+        else if (grade >= 80)
         {
             letter = "B";
         }
-        else if (Grade >= 70)
+        else if (grade >= 70)
         {
             letter = "C";
         }
-        else if (Grade >= 60)
+        else if (grade >= 60)
         {
             letter = "D";
         }
@@ -34,35 +34,35 @@ class Program
             letter = "F";
         }
 
-        if (Grade >= 70)
+        if (grade >= 70)
         {
-            ExtraString = "Congratulations! You have passed!";
+            extraString = "Congratulations! You have passed!";
         }
         else
         {
-            ExtraString = "You have not passed, please try to study a little more next time";
+            extraString = "You have not passed, please try to study a little more next time";
         }
-        if (!(Grade > 93 || Grade < 60))
+        if (!(grade > 93 || grade < 60))
         {
-            remainder = Grade%10;
+            remainder = grade%10;
             if (remainder >=7)
             {
-                Sign = "+";
+                sign = "+";
             }
             else if (remainder <=3)
             {
-                Sign = "-";
+                sign = "-";
             }
             else
             {
-                Sign = "";
+                sign = "";
             }
         }
         else
         {
-            Sign = "";
+            sign = "";
         }
         
-        Console.WriteLine($"Your final grade is {letter}{Sign}! {ExtraString}");
+        Console.WriteLine($"Your final grade is {letter}{sign}! {extraString}");
     }
 }
