@@ -1,9 +1,78 @@
+//Reworked the code so the user can input their own scriptures without editing the code directly
 using System;
+using System.Net;
+using System.Net.Quic;
 
 class Program
 {
     static void Main(string[] args)
     {
+        bool continuing = true;
+        Scripture one = new Scripture();
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
+        List<string> groupList = one.SetScripture();
+        Console.WriteLine("Everything is ready, press enter to start.");
+        Console.ReadLine();
+        string quit = "";
+        if (groupList[0] == "1")
+        {
+            Reference initializer = new Reference(groupList[1],groupList[2],groupList[3]);
+            while (continuing == true)
+            {
+                Console.Clear();
+                initializer.DisplayReference();
+                one.DisplayCurrentScriptures();
+                quit = Console.ReadLine();
+                if (quit == "quit")
+                {
+                    continuing = false;
+                }
+                else
+                {
+                    one.HideWords();
+                }
+            }
+        }
+        else if (groupList[0] == "2")
+        {
+            Reference initializer = new Reference(groupList[1],groupList[2],groupList[3],groupList[4],groupList[5]);
+            while (continuing == true)
+            {
+                Console.Clear();
+                initializer.DisplayReference();
+                one.DisplayCurrentScriptures();
+                quit = Console.ReadLine();
+                if (quit == "quit")
+                {
+                    continuing = false;
+                }
+                else
+                {
+                    one.HideWords();
+                }
+            }
+        }
+        else
+        {
+            Reference initializer = new Reference(groupList[1],groupList[2],groupList[3],groupList[4],groupList[5],groupList[6],groupList[7]);
+            while (continuing == true)
+            {
+                Console.Clear();
+                initializer.DisplayReference();
+                one.DisplayCurrentScriptures();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.Write("Press Enter to continue or type 'quit' to finish: ");
+                quit = Console.ReadLine();
+                if (quit == "quit")
+                {
+                    continuing = false;
+                }
+                else
+                {
+                    one.HideWords();
+                }
+            }
+        }
     }
 }
