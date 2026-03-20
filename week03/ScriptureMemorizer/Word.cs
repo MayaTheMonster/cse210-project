@@ -3,10 +3,6 @@ using System.Security.Cryptography;
 public class Word
 {
     //Scripture reader = new Scripture();
-
-    private string _word;
-    private List<string> _Word = new List<string>();
-
     public string HideWord(string listString)
     {
         List<string>wordList = listString.Split().ToList();
@@ -16,10 +12,16 @@ public class Word
 
         while (NumberOfWords>=1)
         {
-            int RandomWord = NumberGenerator.Next(0,listLong);
+            int RandomWord = NumberGenerator.Next(0,listLong-1);
             string chosenWord = wordList[RandomWord];
             int wordLenght = chosenWord.Length;
-            if (!chosenWord.Contains("_"))
+            char annoying = '_';
+            bool valor = chosenWord.Contains(annoying);
+            if (chosenWord == "")
+            {
+                valor = true;
+            }
+            if (valor == false)
             {
                 NumberOfWords-=1;
             }

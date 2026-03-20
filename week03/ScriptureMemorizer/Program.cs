@@ -2,6 +2,8 @@
 using System;
 using System.Net;
 using System.Net.Quic;
+using System.Resources;
+using System.Runtime.CompilerServices;
 
 class Program
 {
@@ -22,10 +24,17 @@ class Program
                 Console.Clear();
                 initializer.DisplayReference();
                 one.DisplayCurrentScriptures();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.Write("Press Enter to continue, type 'quit' to finish or type 'reset' to restart: ");
                 quit = Console.ReadLine();
                 if (quit == "quit")
                 {
                     continuing = false;
+                }
+                else if (quit == "reset")
+                {
+                    one.ResetScriptureHider(groupList);
                 }
                 else
                 {
@@ -41,10 +50,17 @@ class Program
                 Console.Clear();
                 initializer.DisplayReference();
                 one.DisplayCurrentScriptures();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.Write("Press Enter to continue, type 'quit' to finish or type 'reset' to restart: ");
                 quit = Console.ReadLine();
                 if (quit == "quit")
                 {
                     continuing = false;
+                }
+                else if (quit == "reset")
+                {
+                    one.ResetScriptureHider(groupList);
                 }
                 else
                 {
@@ -62,11 +78,15 @@ class Program
                 one.DisplayCurrentScriptures();
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.Write("Press Enter to continue or type 'quit' to finish: ");
+                Console.Write("Press Enter to continue, type 'quit' to finish or type 'reset' to restart: ");
                 quit = Console.ReadLine();
                 if (quit == "quit")
                 {
                     continuing = false;
+                }
+                else if (quit == "reset")
+                {
+                    one.ResetScriptureHider(groupList);
                 }
                 else
                 {

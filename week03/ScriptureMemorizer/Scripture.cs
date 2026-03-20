@@ -73,4 +73,9 @@ public class Scripture
         _scripture = newScripture;
     }
 
+    public void ResetScriptureHider(List<string> origin)
+    {
+        ActuallyAddScriptures(origin);
+    }
+
 }
