@@ -1,4 +1,5 @@
-//Reworked the code so the user can input their own scriptures without editing the code directly
+//Reworked the code so the user can input their own scriptures without editing the code directly, also added the option for the user to "reset"
+//the program to be able to see the full uncensored scripture again
 using System;
 using System.Net;
 using System.Net.Quic;
@@ -94,5 +95,7 @@ class Program
                 }
             }
         }
+        Console.Clear();
+        Console.WriteLine("Thank you for using our program");
     }
 }
