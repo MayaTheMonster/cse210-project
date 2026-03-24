@@ -3,8 +3,10 @@ using System.Security.Cryptography;
 public class Word
 {
     private int _wordsDeleted;
+    private string _detector;
     public string HideWord(string listString, int deleted, int trueListCount)
     {
+        _detector = "Press Enter to continue, type 'quit' to finish or type 'reset' to restart: ";
         _wordsDeleted = deleted;
         List<string>wordList = listString.Split().ToList();
         int listLong = wordList.Count();
@@ -29,6 +31,7 @@ public class Word
             }
             else if (_wordsDeleted >= trueListCount-1)
             {
+                _detector = "All word are hidden, type 'quit' to finish or type 'reset' to restart";
                 break;
             }
             string message = "";
@@ -44,6 +47,10 @@ public class Word
             updatedString += $"{sentence} "; 
         }
         return updatedString;
+    }
+    public string GetDetector()
+    {
+        return _detector;
     }
 
     public int GetWordsDeleted()

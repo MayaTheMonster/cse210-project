@@ -71,12 +71,14 @@ public class Scripture
         Console.WriteLine(_scripture);
     }
 
-    public void HideWords()
+    public string HideWords()
     {
         Word hider = new Word();
         string newScripture = hider.HideWord(_scripture,_wordsDeleted,_trueCount);
         _wordsDeleted = hider.GetWordsDeleted();
+        string displayMessage = hider.GetDetector();
         _scripture = newScripture;
+        return displayMessage;
     }
 
     public void ResetScriptureHider(List<string> origin)

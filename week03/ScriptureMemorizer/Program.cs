@@ -17,6 +17,7 @@ class Program
         one.ScriptureCountResetter();
         Console.WriteLine("Everything is ready, press enter to start.");
         Console.ReadLine();
+        string message = "Press Enter to continue, type 'quit' to finish or type 'reset' to restart: ";
         string quit = "";
         if (groupList[0] == "1")
         {
@@ -28,7 +29,7 @@ class Program
                 one.DisplayCurrentScriptures();
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.Write("Press Enter to continue, type 'quit' to finish or type 'reset' to restart: ");
+                Console.Write(message);
                 quit = Console.ReadLine();
                 if (quit == "quit")
                 {
@@ -40,7 +41,7 @@ class Program
                 }
                 else
                 {
-                    one.HideWords();
+                    message = one.HideWords();
                 }
             }
         }
@@ -54,7 +55,7 @@ class Program
                 one.DisplayCurrentScriptures();
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.Write("Press Enter to continue, type 'quit' to finish or type 'reset' to restart: ");
+                Console.Write(message);
                 quit = Console.ReadLine();
                 if (quit == "quit")
                 {
@@ -66,7 +67,7 @@ class Program
                 }
                 else
                 {
-                    one.HideWords();
+                    message = one.HideWords();
                 }
             }
         }
@@ -80,7 +81,7 @@ class Program
                 one.DisplayCurrentScriptures();
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.Write("Press Enter to continue, type 'quit' to finish or type 'reset' to restart: ");
+                Console.Write(message);
                 quit = Console.ReadLine();
                 if (quit == "quit")
                 {
@@ -92,7 +93,7 @@ class Program
                 }
                 else
                 {
-                    one.HideWords();
+                    message = one.HideWords();
                 }
             }
         }
