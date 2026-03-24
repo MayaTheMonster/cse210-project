@@ -1,12 +1,16 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Metrics;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 public class Scripture
 {
     private string _scripture;
+    private int _wordsDeleted;
+    private int _trueCount;
     public List<string> SetScripture()
     {
         Console.Write("Please insert how many consecultive scriptures you wish to memorize up to 3 (ex:1): ");
@@ -60,6 +64,7 @@ public class Scripture
             megaText += $"{text} ";
         }
         _scripture = megaText;
+        countScripture();
     }
     public void DisplayCurrentScriptures()
     {
@@ -69,13 +74,24 @@ public class Scripture
     public void HideWords()
     {
         Word hider = new Word();
-        string newScripture = hider.HideWord(_scripture);
+        string newScripture = hider.HideWord(_scripture,_wordsDeleted,_trueCount);
+        _wordsDeleted = hider.GetWordsDeleted();
         _scripture = newScripture;
     }
 
     public void ResetScriptureHider(List<string> origin)
     {
         ActuallyAddScriptures(origin);
+        ScriptureCountResetter();
+    }
+    public void ScriptureCountResetter()
+    {
+        _wordsDeleted = 0;
     }
 
+    private void countScripture()
+    {
+        List<string> scriptureList = _scripture.Split().ToList();
+        _trueCount = scriptureList.Count();
+    }
 }

@@ -14,6 +14,7 @@ class Program
         Scripture one = new Scripture();
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
         List<string> groupList = one.SetScripture();
+        one.ScriptureCountResetter();
         Console.WriteLine("Everything is ready, press enter to start.");
         Console.ReadLine();
         string quit = "";

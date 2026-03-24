@@ -2,9 +2,10 @@ using System.Security.Cryptography;
 
 public class Word
 {
-    //Scripture reader = new Scripture();
-    public string HideWord(string listString)
+    private int _wordsDeleted;
+    public string HideWord(string listString, int deleted, int trueListCount)
     {
+        _wordsDeleted = deleted;
         List<string>wordList = listString.Split().ToList();
         int listLong = wordList.Count();
         Random NumberGenerator = new Random();
@@ -24,6 +25,11 @@ public class Word
             if (valor == false)
             {
                 NumberOfWords-=1;
+                _wordsDeleted+=1;
+            }
+            else if (_wordsDeleted >= trueListCount-1)
+            {
+                break;
             }
             string message = "";
             for (int i = 0; i<= wordLenght-1; i++)
@@ -38,5 +44,10 @@ public class Word
             updatedString += $"{sentence} "; 
         }
         return updatedString;
+    }
+
+    public int GetWordsDeleted()
+    {
+        return _wordsDeleted;
     }
 }
