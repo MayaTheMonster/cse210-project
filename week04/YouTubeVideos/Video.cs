@@ -11,12 +11,12 @@ public class Video
     
     public int ReturnCommentAmmount()
     {
-        int _commentAmmount = 0;
-        foreach(Comment _comment in _Comments)
+        int commentAmmount = 0;
+        foreach(Comment comment in _Comments)
         {
-            _commentAmmount+=1;
+            commentAmmount+=1;
         }
-        return _commentAmmount;
+        return commentAmmount;
     }
     public void SetVideo(string videoTitle, string videoAuthor, int videoTime)
     {
@@ -27,16 +27,16 @@ public class Video
 
     public void SetComment(string name, string text)
     {
-        Comment _Setting = new Comment(); 
-        _Setting.SetComment2(name, text);
-        _Comments.Add(_Setting);
+        Comment setting = new Comment(); 
+        setting.SetComment2(name, text);
+        _Comments.Add(setting);
     }
     public void DisplayVideoThings(int ammount)
     {
         Console.WriteLine($" Author: {_videoAuthor} Title: {_videoTitle}\nTime(in seconds): {_videoTime} Number of comments: {ammount}");
-        foreach(Comment _comment in _Comments)
+        foreach(Comment comment in _Comments)
         {
-            _comment.DisplayComments();
+            comment.DisplayComments();
         }
     }
 }
