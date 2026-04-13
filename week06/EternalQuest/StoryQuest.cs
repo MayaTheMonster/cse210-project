@@ -30,6 +30,7 @@ public class StoryQuest : Quest
         else
         {
             _isCompleted = true;
+            Console.WriteLine($"You have completed {_questName}!");
             return _questValue;
         }
         

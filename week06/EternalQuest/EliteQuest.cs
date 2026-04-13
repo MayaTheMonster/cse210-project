@@ -73,10 +73,13 @@ public class EliteQuest : Quest
         else if (_isCompleted == false && _timesCompleted == _repeatValue)
         {
             int total = _questValue+_bonusValue;
+            _isCompleted = true;
+            Console.WriteLine($"You have completed {_questName}!");
             return total;
         }
         else
         {
+            Console.WriteLine($"You have done {_timesCompleted}/{_repeatValue} {_questName}!");
             return _questValue;
         }
     }

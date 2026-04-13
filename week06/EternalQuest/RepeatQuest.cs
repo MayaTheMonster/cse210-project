@@ -30,6 +30,7 @@ public class RepeatQuest : Quest
     public override int CompleteQuest()
     {
         _timesCompleted += 1;
+        Console.WriteLine($"You have completed {_questName}!");
         return _questValue;
     }
 }

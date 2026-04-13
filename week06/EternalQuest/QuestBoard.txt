@@ -6,4 +6,4 @@ Story|fixing the UI to look nicer|I know i will mess up so i'm adding this in ad
 Repeat|Do everything over again|not really lol|30|false|3
 Elite|test 1|this is a test|300|False|900|0|3
 Repeat|fake name|not a real quest|85|false|1
-Elite|goat test goal|big quest|200|False|400|2|2
+Elite|goat test goal|big quest|200|False|400|1|2
