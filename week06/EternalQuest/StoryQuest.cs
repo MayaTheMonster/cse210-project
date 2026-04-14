@@ -11,7 +11,7 @@ public class StoryQuest : Quest
         _questName = info[1];
         _questDescription = info[2];
         _questValue = int.Parse(info[3]);
-        if (info[4] == "true")
+        if (info[4] == "true" || info[4] == "True")
         {
             _isCompleted = true;
         }

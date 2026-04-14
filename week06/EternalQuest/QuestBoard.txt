@@ -1,4 +1,4 @@
-6|200|2300
+7|100|2900
 Story|Finish this very program|finishing and making sure this program works as intended|1000|True
 Repeat|creating a test for this program|creating and executing successfully a test run of this very program|100|false|0
 Elite|fixing the last 4 methods of this program|implementing and testing the last methods of this program|75|False|300|3|4
@@ -6,4 +6,4 @@ Story|fixing the UI to look nicer|I know i will mess up so i'm adding this in ad
 Repeat|Do everything over again|not really lol|30|false|3
 Elite|test 1|this is a test|300|False|900|0|3
 Repeat|fake name|not a real quest|85|false|1
-Elite|goat test goal|big quest|200|False|400|1|2
+Elite|goat test goal|big quest|200|True|400|2|2
